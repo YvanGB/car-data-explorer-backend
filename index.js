@@ -21,8 +21,8 @@ const options = {
         },
         servers: [
             {
-                url: 'http://localhost:5000',
-                description: 'Serveur de développement',
+                url: 'https://cardataexplorerapi.onrender.com',
+                description: 'Serveur sur render.com',
             },
         ],
     },
