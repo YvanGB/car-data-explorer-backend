@@ -6,7 +6,8 @@ const USCarSchema = new mongoose.Schema({
         default: () => new mongoose.Types.ObjectId(),
       },
       price:{
-        type: Number
+        type: Number,
+        required: true
       },
       brand:{
         type:String,
@@ -17,19 +18,23 @@ const USCarSchema = new mongoose.Schema({
         required:true
       },
       year:{
-        type:Number
+        type:Number,
+        required: true
       },
       title_status:{
         type:String,
+        require: true
       },
       mileage:{
-        type:Number
+        type:Number,
+        required:true
       },
       color:{
         type:String
       },
       vin:{
-        type:String
+        type:String,
+        required: true
       },
       state:{
         type:String
