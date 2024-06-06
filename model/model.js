@@ -50,5 +50,5 @@ const USCarSchema = new mongoose.Schema({
 const USCar = mongoose.model('USCar', USCarSchema);
 
 module.exports = {
-    USCar
+    USCar 
 };
