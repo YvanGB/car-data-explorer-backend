@@ -41,7 +41,7 @@ jobs:
       run: docker build -t cardatapp:1.0 .
 
     - name: Save Docker image to cache
-      run: docker save cardatapp:1.0 -o cardatapp.tar
+      run: docker save -o cardatapp.tar cardatapp:1.0
 
     - name: Upload Docker image
       uses: actions/upload-artifact@v3
