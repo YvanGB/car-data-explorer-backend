@@ -41,13 +41,13 @@ jobs:
       run: docker build -t cardatapp:1.0 .
 
     - name: Save Docker image to cache
-      run: docker save cardatapp:1.0 | gzip > cardatapp.tar.gz
+      run: docker save cardatapp:1.0 -o cardatapp.tar
 
     - name: Upload Docker image
       uses: actions/upload-artifact@v3
       with:
         name: cardatapp-image
-        path: cardatapp.tar.gz
+        path: cardatapp.tar
 
   test:
     needs: build
@@ -57,10 +57,10 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: cardatapp-image
-        path: cardatapp.tar.gz
+        path: cardatapp.tar
 
     - name: Load Docker image
-      run: gunzip -c cardatapp.tar.gz | docker load
+      run: docker load -i cardatapp.tar
 
     - name: Run tests
       run: docker run cardatapp:1.0 npm test
