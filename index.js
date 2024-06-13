@@ -22,7 +22,7 @@ const options = {
         servers: [
             {
                 url: 'https://cardataexplorerapi.onrender.com',
-                description: 'Serveur sur render.com',
+                description: 'Le serveur sur render.com',
             },
         ],
     },
